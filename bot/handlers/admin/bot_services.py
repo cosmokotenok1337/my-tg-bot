@@ -41,8 +41,8 @@ async def get_services_data(db_session: Session, bot: Bot, **kwargs):
 
 
 services_window = Window(
-    Const("Заказы:"),
-    Cancel(Const("Назад")),
+    Const("💸 Заказы 💸"),
+    Cancel(Const("🔙 Назад")),
     ScrollingGroup(
         Select(
             Format("{item[1]} от {item[2]}"),

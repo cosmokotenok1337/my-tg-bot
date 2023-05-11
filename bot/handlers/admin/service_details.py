@@ -60,7 +60,7 @@ async def get_service_data(
 
 
 service_details_window = Window(
-    Format("Информация о заказе\n"),
+    Format("⌚ Информация о заказе ⌚\n"),
     Format("Идентификатор: {service_id}"),
     Format("Заказчик: {service_customer}"),
     Format('Название: "{service_title}"'),
@@ -68,8 +68,8 @@ service_details_window = Window(
         "Описание бота:\n{service_description}",
         when="service_description",
     ),
-    Button(Const("Удалить"), id="deleteservice", on_click=delete_service),
-    Cancel(Const("Назад")),
+    Button(Const("❌ Удалить"), id="deleteservice", on_click=delete_service),
+    Cancel(Const("🔙 Назад")),
     state=AdminServiceSG.service_details,
     getter=get_service_data,
 )

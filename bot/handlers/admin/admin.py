@@ -11,9 +11,9 @@ from dialog.dialog_state import AdminSG, AdminServicesSG
 from sqlalchemy.orm import Session
 
 admin_window = Window(
-    Const("Хозяин, я к вашим услугам."),
+    Const("🔥 Хозяин, я к вашим услугам. 🔥"),
     Start(
-        Const("Заказы ботов"),
+        Const("🤖 Заказы ботов"),
         id="adminpanelbotservices",
         state=AdminServicesSG.services_list,
     ),

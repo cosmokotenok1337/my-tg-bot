@@ -1,4 +1,5 @@
 """Service order create client-side handlers"""
+
 import logging
 from typing import Any
 
@@ -23,8 +24,8 @@ from sqlalchemy.exc import DBAPIError
 from config_loader import Config
 
 offer_created_window = Window(
-    Const("Заказ создан, ожидайте, c вами свяжутся в течении 30 минут."),
-    Cancel(Const("Назад")),
+    Const("✅ Заказ создан, ожидайте, c вами свяжутся в течении 30 минут."),
+    Cancel(Const("🔙 Назад")),
     state=BotServiceOfferSG.offer_created,
 )
 
@@ -68,8 +69,8 @@ async def set_description(
 
 
 set_description_window = Window(
-    Const("Полностью опишите техническое задание."),
-    Cancel(Const("Отмена")),
+    Const("⌛ Полностью опишите техническое задание."),
+    Cancel(Const("❌ Отмена")),
     TextInput("botservicedescinp", str, on_success=set_description),
     state=BotServiceOfferSG.set_description,
 )
@@ -86,8 +87,8 @@ async def set_title(
 
 
 set_title_window = Window(
-    Const("Кратко опишите какой бот вам нужен, не более 50 символов."),
-    Cancel(Const("Отмена")),
+    Const("🖊️ Кратко опишите какой бот вам нужен, не более 50 символов."),
+    Cancel(Const("❌ Отмена")),
     TextInput("botservicetitleinp", str, on_success=set_title),
     state=BotServiceOfferSG.set_title,
 )
