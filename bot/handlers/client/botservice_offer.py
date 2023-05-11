@@ -62,8 +62,7 @@ async def set_description(
         await pm_admins(config)
 
         await manager.switch_to(BotServiceOfferSG.offer_created)
-    except (DBAPIError, ValidationError) as exc:
-        logging.ERROR(exc)
+    except (DBAPIError, ValidationError):
         await message.answer("Что то пошло не так..")
         await manager.done()
 
